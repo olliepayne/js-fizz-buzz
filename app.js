@@ -6,8 +6,24 @@
 // allow a user defined range
 // print out into a 'virtual terminal'
 
-function checkFizzBuzz(i = 0) {
-  console.log(i)
+function checkFizzBuzz(i, n) {
+  if (i <= n) {
+    let output = ''
+
+    if (i % 3 === 0 && i % 5 === 0) {
+      output = 'FizzBuzz'
+    } else if (i % 3 === 0) {
+      output = 'Fizz'
+    } else if (i % 5 === 0) {
+      output = 'Buzz'
+    } else {
+      output = i
+    }
+
+    console.log(output)
+
+    checkFizzBuzz(i + 1, n)
+  }
 }
 
-checkFizzBuzz()
+checkFizzBuzz(1, 100)
