@@ -1,12 +1,15 @@
-// allow a user defined range
-// print out into a 'virtual terminal'
-
+const inputEl = document.getElementById('input')
+const runBtn = document.getElementById('run')
+runBtn.addEventListener('click', runFizzBuzz)
 const outputEl = document.getElementById('output')
+
+function runFizzBuzz() {
+  outputEl.value = ''
+  checkFizzBuzz(1, inputEl.value)
+}
 
 function checkFizzBuzz(i, n) {
   if (i <= n) {
-    let output = ''
-
     if (i % 3 === 0 && i % 5 === 0) {
       output = 'FizzBuzz'
     } else if (i % 3 === 0) {
@@ -17,11 +20,8 @@ function checkFizzBuzz(i, n) {
       output = i
     }
 
-    console.log(output)
-    outputEl.innerText = outputEl.innerText + '\n' + output
+    outputEl.value = `${outputEl.value} \n ${output}`
 
     checkFizzBuzz(i + 1, n)
   }
 }
-
-checkFizzBuzz(1, 100)
