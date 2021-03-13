@@ -1,5 +1,5 @@
 const inputEl = document.getElementById('input')
-const runBtn = document.getElementById('run')
+const runBtn = document.getElementById('run-btn')
 runBtn.addEventListener('click', runFizzBuzz)
 const outputEl = document.getElementById('output')
 
